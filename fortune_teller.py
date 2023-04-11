@@ -9,9 +9,9 @@ from streamlit_chat import message
 # 模型获取
 @st.cache_resource
 def get_model():
-    # 对于低成本部署需求的同学，这里修改加载的模型
-    tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True)
-    model = AutoModel.from_pretrained("THUDM/chatglm-6b", trust_remote_code=True).half().cuda()
+    # 对于低成本部署需求的同学，这里修改加载的模型，我这里使用量化后的模型
+    tokenizer = AutoTokenizer.from_pretrained("THUDM/chatglm-6b-int4", trust_remote_code=True, resume_download=True, cache_dir="models")
+    model = AutoModel.from_pretrained("THUDM/chatglm-6b-int4", trust_remote_code=True, resume_download=True, cache_dir="models").half().cuda()
     model = model.eval()
     return tokenizer, model
 
