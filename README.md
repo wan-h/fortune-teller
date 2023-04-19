@@ -6,11 +6,23 @@
 本仓库只有fortune_teller.py一个代码文件，详细说明见代码中的注释。
 
 ## 部署
-部署有两种方式，如果本地有显卡可以本地部署，本地没有显卡可以在云端部署，
+### 本地部署
+* 安装依赖库  
+```bash
+cd fortune-teller
+pip install -r requirements.txt -i https://pypi.tuna.tsinghua.edu.cn/simple
+```
+* 启动服务  
+```bash
+# CPU部署(不建议使用，因为非常慢！！！)
+streamlit run fortune_teller_cpu.py --theme.base "dark" --server.port 6006
+# GPU部署(本地需要8G显存)
+streamlit run fortune_teller.py --theme.base "dark" --server.port 6006
+```
+### 云端部署
 这里我选用的是性价比较高的[AutoDL](https://www.autodl.com/)，
-后续教程我以云端部署为例，本地只需要省去云端显卡机器申请即可，部署流程是一样的。  
 对于需要低成本部署的可以参考[ChatGLM-6B的低成本部署](https://github.com/THUDM/ChatGLM-6B#%E4%BD%8E%E6%88%90%E6%9C%AC%E9%83%A8%E7%BD%B2)
-* 机器申请(本地部署跳过)  
+* 机器申请  
 我的镜像环境如下：  
 ![](src/1.png)
 * 环境配置  
