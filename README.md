@@ -55,9 +55,5 @@ streamlit run fortune_teller.py --theme.base "dark" --server.port 6006
 ## 协议
 本仓库的代码依照 [Apache-2.0](LICENSE) 协议开源，ChatGLM-6B 模型的权重的使用则需要遵循 [Model License](MODEL_LICENSE)。
 
-## 兴趣小组
-添加好友，申请进群  
-![](src/wechat.png)
-
 ## Thanks
 Thanks for [THUDM/ChatGLM-6B](https://github.com/THUDM/ChatGLM-6B)
